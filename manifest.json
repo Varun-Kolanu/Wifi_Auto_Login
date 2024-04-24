@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Wifi Auto Login",
+  "version": "1.0",
+  "permissions": ["tabs", "activeTab", "webRequest", "storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": ["http://192.168.249.1:1000/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "options.html",
+    "default_icon": {
+      "512": "images/wifi.png"
+    }
+  }
+}
