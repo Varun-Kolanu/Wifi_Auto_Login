@@ -21,6 +21,7 @@ function fillInLoginForm() {
   storageAPI.get(["username", "password"], function (result) {
     if (result.username && result.password) {
       console.log("Logging in...");
+      console.log(result);
       document.getElementsByName("username")[0].value = result.username;
       document.getElementsByName("password")[0].value = result.password;
       document.querySelector('input[type="submit"]')?.click();
@@ -30,6 +31,4 @@ function fillInLoginForm() {
   });
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  fillInLoginForm();
-});
+fillInLoginForm();
